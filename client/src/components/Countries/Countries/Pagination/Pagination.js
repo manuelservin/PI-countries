@@ -1,34 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { ThemeContext } from "styled-components";
+
 import { loadCountries } from "../../../../redux/reducers/CountrySlice/CountrySlice";
 import { NavigateBefore } from "@styled-icons/material-outlined/NavigateBefore";
 import { NavigateNext } from "@styled-icons/material-outlined/NavigateNext";
 
-const Pagination = () => {
-  const themeContext = useContext(ThemeContext);
-
-  let countries = useSelector((state) => state.countries.countries);
-
-  const region = useSelector((state) => state.countries.region);
-  const subregion = useSelector((state) => state.countries.subregion);
-  if (subregion && subregion.length > 0) {
-    countries = subregion;
-  }
+const Pagination = ({ countries }) => {
   const dispatch = useDispatch();
-  const filterActivity = useSelector(
-    (state) => state.countries.countriesActivity
-  );
 
-  if (region && region.length > 0) {
-    countries = region;
-  }
-
-  if (filterActivity && filterActivity.length > 0) {
-    countries = filterActivity;
-  }
   const [currentPage, setcurrentPage] = useState(1);
   const itemsPerPage = 10;
   const pageNumberLimit = 5;

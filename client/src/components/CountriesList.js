@@ -1,16 +1,16 @@
 import React from "react";
 
 import styled from "styled-components";
-import CountriesItem from "./CountriesItem";
+
+import Pagination from "./Pagination";
 
 const CountriesList = ({ countries }) => {
   return (
-    <CardContainer>
-      {countries &&
-        countries.map((country) => (
-          <CountriesItem key={country.id} {...country} />
-        ))}
-    </CardContainer>
+    <>
+      <CardContainer>
+        <Pagination countries={countries} />
+      </CardContainer>
+    </>
   );
 };
 

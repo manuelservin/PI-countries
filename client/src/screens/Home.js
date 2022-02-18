@@ -20,7 +20,7 @@ const Home = () => {
     dispatch(loadCountries()).then(({ payload }) => setCountries(payload));
     dispatch(loadActivities());
   }, []);
-  return <div>{countries && <CountriesList countries={countries} />}</div>;
+  return <div> {countries && <CountriesList countries={countries} />} </div>;
 };
 
 export default Home;
