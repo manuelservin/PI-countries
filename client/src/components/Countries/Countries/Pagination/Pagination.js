@@ -9,7 +9,6 @@ import { NavigateNext } from "@styled-icons/material-outlined/NavigateNext";
 
 const Pagination = () => {
   const themeContext = useContext(ThemeContext);
-  console.log(themeContext);
 
   let countries = useSelector((state) => state.countries.countries);
 
