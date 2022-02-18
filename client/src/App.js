@@ -4,13 +4,14 @@ import { Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import FormActivity from "./components/activities/formActivity/FormActivity";
+
 import { darkTheme, lightTheme } from "./themes";
 import useDarkMode from "./hooks/useDarkMode/useDarkMode";
 import { ThemeProvider } from "styled-components";
 import LandingPage from "./screens/LandingPage";
 import Home from "./screens/Home";
 import Details from "./screens/Details";
+import NewActivity from "./screens/NewActivity";
 
 function App() {
   const [theme, toggleTheme] = useDarkMode();
@@ -25,7 +26,7 @@ function App() {
       />
       <Route exact path="/home/countries" component={Home} />
       <Route exact path="/home/countries/:id" component={Details} />
-      <Route exact path="/home/activities/create" component={FormActivity} />
+      <Route exact path="/home/activities/create" component={NewActivity} />
       <Route />
       <Route path="/home" component={Footer} />
     </ThemeProvider>
