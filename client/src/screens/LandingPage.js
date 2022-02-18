@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import video from "../../assets/bg.mp4";
+import video from "../assets/bg.mp4";
 
 const Container = styled.div`
   width: 100vw;
@@ -58,7 +58,7 @@ const BgVideo = styled.video`
   z-index: -1;
 `;
 
-const Home = () => {
+const LandingPage = () => {
   return (
     <Container>
       <SectionContainer>
@@ -71,4 +71,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LandingPage;

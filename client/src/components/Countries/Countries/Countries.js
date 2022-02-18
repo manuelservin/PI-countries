@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import {
   loadCountries,
   loadActivities,
 } from "../../../redux/reducers/CountrySlice/CountrySlice";
 
 import styled from "styled-components";
-import Filters from "./Options/Filters";
+
 import Pagination from "./Pagination/Pagination";
-import CountriesList from "./CountriesList";
 
 const PageContainer = styled.div`
   .contenedor::-webkit-scrollbar:vertical {

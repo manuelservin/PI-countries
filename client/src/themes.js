@@ -1,5 +1,3 @@
-import { createGlobalStyle } from "styled-components";
-
 export const lightTheme = {
   background: "#f9f9f9", // Color de fondo
   backgroundContainer: "#f9f9f9", //color para diferenciar
