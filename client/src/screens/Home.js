@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import {
-  loadCountries,
-  loadActivities,
-} from "../../../redux/reducers/CountrySlice/CountrySlice";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 import styled from "styled-components";
-import Filters from "./Options/Filters";
-import Pagination from "./Pagination/Pagination";
+import Pagination from "../components/Countries/Countries/Pagination/Pagination";
+import PaginatedCountries from "../components/PaginatedCountries";
+import {
+  loadActivities,
+  loadCountries,
+} from "../redux/reducers/CountrySlice/CountrySlice";
 
 const PageContainer = styled.div`
   .contenedor::-webkit-scrollbar:vertical {
@@ -35,22 +34,21 @@ const PageContainer = styled.div`
   }
 `;
 
-const Countries = () => {
+const Home = () => {
   var dispatch = useDispatch();
-  const [countries, setCountries] = useState();
+
   useEffect(() => {
-    dispatch(loadCountries()).then(({ payload }) => setCountries(payload));
+    dispatch(loadCountries());
     dispatch(loadActivities());
   }, []);
 
   return (
     <>
       <PageContainer className="contenedor">
-        <Pagination />
-        {/*<CountriesList countries={countries}/>*/}
+        <PaginatedCountries />
       </PageContainer>
     </>
   );
 };
 
-export default Countries;
+export default Home;

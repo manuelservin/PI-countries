@@ -142,7 +142,6 @@ let countrySlice = createSlice({
 
       state.region = state.countries.filter((c) => c.region === action.payload);
     },
-   
 
     filterByActivity(state, action) {
       console.log(action.payload);
@@ -184,7 +183,6 @@ export const {
   orderAsc,
   orderDesc,
   filterByContinent,
-  filterBySubRegion,
   filterByActivity,
 } = countrySlice.actions;
 
