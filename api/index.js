@@ -19,10 +19,13 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const {Load}= require('./src/seeders/index')
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
+    Load(); //conecto la API con la bd
+    console.log('base de datos conenctada')
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
