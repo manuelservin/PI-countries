@@ -12,6 +12,7 @@ import { ThemeProvider } from "styled-components";
 import LandingPage from "./screens/LandingPage";
 import styled from "styled-components";
 import Home from "./screens/Home";
+import NewActivity from "./screens/NewActivity";
 
 function App() {
   const [theme, toggleTheme] = useDarkMode();
@@ -28,7 +29,7 @@ function App() {
         {/* <Route exact path="/home/countries" component={Countries} /> */}
         <Route exact path="/home/countries" component={Home} />
         <Route exact path="/home/countries/:id" component={Country} />
-        <Route exact path="/home/activities/create" component={FormActivity} />
+        <Route exact path="/home/activities/create" component={NewActivity} />
         <Route />
         <Route path="/home" component={Footer} />
       </ThemeProvider>

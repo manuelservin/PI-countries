@@ -51,7 +51,7 @@ const NavBar = ({ theme, toggleTheme }) => {
   return (
     <NavBarContainer>
       <div className="logo">
-        <Link to ="/">
+        <Link to="/">
           <h1>App.</h1>
         </Link>
       </div>
